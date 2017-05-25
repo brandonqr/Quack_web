@@ -1,0 +1,5 @@
+
+<img class="imagenEvento" [src]="+( evento?.imagen | imagenDefault )" alt="" [ngStyle]="{'background-image': 'url(' +( evento?.imagen | imagenDefault ) + ')'}">
+<button
+ (click)="quackEvento()"
+type="button" class="btn-block btn-outline-warning" name="button">Quack!</button>

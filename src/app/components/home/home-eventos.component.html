@@ -1,0 +1,10 @@
+<div class="col-md-12 pointer">
+  <div class="row "   *ngFor="let evento of eventos">
+    <div class="col-md-12" [routerLink]="['/evento', evento?._id]">
+      <h1>{{evento?.nombre}}</h1>
+      <img class="imagenEvento" alt="" [ngStyle]="{'background-image': 'url(' +( evento?.imagen | imagenDefault ) + ')'}">
+    </div>
+
+
+  </div>
+</div>

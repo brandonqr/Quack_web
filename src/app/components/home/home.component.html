@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-9">
+      <app-home-eventos [eventos]="eventos"></app-home-eventos>
+    </div>
+    <div class="col-md-3">
+      <app-home-perfil [usuario]="usuario"></app-home-perfil>
+      <app-home-perfil-eventos titulo="Eventos Creados"
+                                [eventos]="eventosCreados"></app-home-perfil-eventos>
+      <app-home-perfil-eventos titulo="Eventos No Creados"
+                                [eventos]="eventosNoCreados"></app-home-perfil-eventos>
+    </div>
+  </div>
+</div>

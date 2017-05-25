@@ -1,0 +1,36 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" [routerLink]="['home']">
+     <img src="../../../assets/img/logo.png" width="30" height="30" alt="">
+  </a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li   *ngIf="authService.isAuthenticated()"
+        class="nav-item"  routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['perfil']">Perfil</a>
+      </li>
+      <li>
+         <input class="form-control col-m" type="text" placeholder="Search">
+      </li>
+    </ul>
+
+    <span class="navbar-text">
+      <button
+        class="btn btn-primary btn-sm btn-margin"
+        *ngIf="!authService.isAuthenticated()"
+        (click)="authService.login()">
+          Log In
+      </button>
+
+      <button
+        class="btn btn-primary btn-sm btn-margin"
+        *ngIf="authService.isAuthenticated()"
+        (click)="authService.logout()">
+          Log Out
+      </button>
+    </span>
+  </div>
+</nav>
